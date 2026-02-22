@@ -1,0 +1,17 @@
+
+> crm@0.1.0 dev
+> next dev
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://87.106.147.70:3000
+- Environments: .env
+
+✓ Starting...
+✓ Ready in 461ms
+ GET / 200 in 231ms (compile: 146ms, render: 85ms)
+ GET / 200 in 23ms (compile: 3ms, render: 20ms)
+ GET / 200 in 35ms (compile: 1920µs, render: 33ms)
+✓ Compiled in 202ms
+✓ Compiled in 6ms
+[?25h
