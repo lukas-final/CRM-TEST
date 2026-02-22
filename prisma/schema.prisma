@@ -4,13 +4,14 @@ generator client {
 
 datasource db {
   provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
 model User {
   id        String   @id @default(cuid())
   email     String   @unique
   name      String
-  role      String   @default("closer")
+  role      String   @default("CLOSER")
   password  String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -18,16 +19,18 @@ model User {
 }
 
 model Sale {
-  id              String   @id @default(cuid())
-  userId          String
-  user            User     @relation(fields: [userId], references: [id])
-  amount          Float
-  paymentType     String
+  id                String   @id @default(cuid())
+  userId            String
+  user              User     @relation(fields: [userId], references: [id])
+  date              DateTime
+  amount            Float
+  paymentType       String   @default("FULL")
   installmentMonths Int?
-  monthlyAmount   Float?
-  stage           String
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
+  monthlyAmount     Float?
+  stage             String   @default("LEADS")
+  closerName        String
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
 }
 
 model Expense {
@@ -35,7 +38,7 @@ model Expense {
   description String
   amount      Float
   date        DateTime
-  closerId    String?
+  closerName  String?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
