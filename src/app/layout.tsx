@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "CRM Static Test",
-  description: "Static CRM demo - no JavaScript",
+  title: "Sales CRM",
+  description: "Sales CRM Dashboard",
 };
 
 export default function RootLayout({
@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="de">
       <body style={{ margin: 0, padding: 0 }}>
         {children}
       </body>
